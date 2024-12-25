@@ -1,0 +1,643 @@
+/* General Styles */
+*{
+    margin: 0;
+    padding: 0;
+  }
+  /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background-color: #F0F8FF; /* Alice Blue Background */
+}
+
+/* Background Image for Home Section */
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 20px; /* Top padding to avoid overlap with fixed header */
+    background: url('background.jpg') no-repeat center center/cover; /* Background image */
+}
+
+/* Fixed Header Styles */
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+header.scrolled {
+    background: rgba(255, 255, 255, 1); /* Change header background on scroll */
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.37);
+    
+    
+  }
+  nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  nav li{
+    height: 50px;
+    position: relative; /* Position for pseudo-elements */
+  }
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0f0f0f; /* Logo color */
+    margin-right: auto;
+    
+  }
+  .logo a:hover{
+    color: #6d6d72;
+  
+  }
+  nav li a{
+    height: 100%;
+    padding: 0 30px;/* Added padding for clickable area */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #5f5c68; /* Light purple text color */
+    font-weight: 500; /* Slightly bolder text */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Transition for background and text color */
+  }
+  nav li a:hover{
+    background-color: #918d99; /* Light purple background on hover */
+    color: #fff; /* Change text color on hover */
+  }
+  
+  .sidebar{
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .sidebar li{
+    width: 100%;
+  }
+  .sidebar a{
+    width: 100%;
+  }
+  .menu-button{
+    display: none;
+  }
+  @media(max-width: 800px){
+    .hideOnMobile{
+      display: none;
+    }
+    .menu-button{
+      display: block;
+    }
+  }
+  @media(max-width: 400px){
+    .sidebar{
+      width: 100%;
+    }
+  }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation Classes */
+        .animate {
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s forwards; /* Apply the animation */
+        }
+
+/* Media Queries for responsiveness */
+
+* What is Digital Marketing Section */
+#what-is-digital-marketing {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#what-is-digital-marketing h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.what-is-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 40px;
+    justify-content: space-around;
+    text-align: justify;
+}
+
+.what-is-content img {
+    width: 50%;
+    border-radius: 10px;
+    
+}
+
+.what-is-content .text {
+    width: 50%;
+}
+
+#what-is-digital-marketing p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    
+}
+
+/* Why Digital Marketing Section */
+.why-digital-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+
+
+.why-digital-content .text {
+    width: 100%;
+    
+  
+}
+.why-digital-content p{
+    text-align: center;
+    text-align: justify;
+    
+}
+
+/* Responsive Design for screens less than or equal to 1000px */
+@media screen and (max-width: 1000px) {
+    .what-is-content, .why-digital-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .what-is-content img, .what-is-content .text {
+        width: 100%;
+    }
+
+    #what-is-digital-marketing {
+        padding: 40px 20px;
+    }
+
+    #what-is-digital-marketing h2 {
+        font-size: 2rem;
+    }
+
+    .why-digital-content .text {
+        width: 100%;
+    }
+
+    .why-digital-content {
+        gap: 20px;
+    }
+
+    #what-is-digital-marketing p, 
+    .why-digital-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: justify;
+    }
+}
+
+/* Responsive Design for screens less than or equal to 900px */
+@media screen and (max-width: 900px) {
+    .what-is-content, .why-digital-content {
+        flex-direction: column;
+        gap: 30px; /* Reduce gap between elements */
+    }
+
+    .what-is-content img, .what-is-content .text {
+        width: 100%;
+    }
+
+    #what-is-digital-marketing {
+        padding: 40px 15px; /* Adjust padding */
+    }
+
+    #what-is-digital-marketing h2 {
+        font-size: 2rem; /* Reduce heading size */
+    }
+
+    .why-digital-content .text {
+        width: 100%;
+    }
+
+    .why-digital-content {
+        gap: 20px; /* Keep a smaller gap for better spacing */
+    }
+
+    #what-is-digital-marketing p, 
+    .why-digital-content p {
+        font-size: 1.1rem; /* Slightly reduce font size */
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    /* Make sure images don't exceed container width */
+    .what-is-content img {
+        max-width: 100%; /* Ensure images stay within container */
+        height: auto;
+    }
+}
+
+/* Responsive Design for screens less than or equal to 800px */
+@media screen and (max-width: 800px) {
+    .what-is-content, .why-digital-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .what-is-content img, .what-is-content .text {
+        width: 100%;
+    }
+
+    #what-is-digital-marketing {
+        padding: 30px 15px;
+    }
+
+    #what-is-digital-marketing h2 {
+        font-size: 1.8rem;
+    }
+
+    .why-digital-content .text {
+        width: 100%;
+    }
+
+    .why-digital-content {
+        gap: 15px;
+    }
+
+    #what-is-digital-marketing p, 
+    .why-digital-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        text-align: justify;
+    }
+}
+
+/* Responsive Design for screens less than or equal to 700px */
+@media screen and (max-width: 700px) {
+    #what-is-digital-marketing {
+        padding: 20px 10px;
+    }
+
+    #what-is-digital-marketing h2 {
+        font-size: 1.8rem;
+    }
+
+    .what-is-content, .why-digital-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .what-is-content img {
+        width: 100%;
+    }
+
+    .what-is-content .text, 
+    .why-digital-content .text {
+        width: 100%;
+    }
+
+    #what-is-digital-marketing p,
+    .why-digital-content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* Responsive Design for screens less than or equal to 600px */
+@media screen and (max-width: 600px) {
+    .what-is-content, .why-digital-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .what-is-content img, .what-is-content .text {
+        width: 100%;
+    }
+
+    #what-is-digital-marketing {
+        padding: 30px 10px;
+    }
+
+    #what-is-digital-marketing h2 {
+        font-size: 1.8rem;
+    }
+
+    #what-is-digital-marketing p, 
+    .why-digital-content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    /* Adjust container and text sizes */
+    .what-is-content .text, 
+    .why-digital-content .text {
+        font-size: 0.9rem;
+        width: 100%;
+    }
+}
+
+/* Responsive Design for screens less than or equal to 500px */
+@media screen and (max-width: 500px) {
+    .what-is-content, .why-digital-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .what-is-content img, .what-is-content .text {
+        width: 100%;
+    }
+
+    #what-is-digital-marketing {
+        padding: 20px 10px;
+    }
+
+    #what-is-digital-marketing h2 {
+        font-size: 1.8rem;
+    }
+
+    #what-is-digital-marketing p,
+    .why-digital-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .what-is-content img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .what-is-content .text,
+    .why-digital-content .text {
+        width: 100%;
+    }
+
+    .why-digital-content {
+        gap: 10px;
+    }
+
+}
+
+/* Responsive Design for screens less than or equal to 400px */
+@media screen and (max-width: 400px) {
+    #what-is-digital-marketing h2 {
+        font-size: 1.5rem; /* Reduce font size for headings */
+    }
+
+    #what-is-digital-marketing p, 
+    .why-digital-content p {
+        font-size: 0.9rem; /* Reduce font size for paragraphs */
+        line-height: 1.4; /* Adjust line height for readability */
+    }
+
+    .what-is-content, .why-digital-content {
+        gap: 20px; /* Reduce the gap between items */
+    }
+
+    .what-is-content img {
+        width: 100%; /* Ensure images take the full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .what-is-content .text, .why-digital-content .text {
+        padding: 0 10px; /* Add some horizontal padding for text */
+    }
+}
+
+/* Responsive Design for screens less than or equal to 300px */
+@media screen and (max-width: 300px) {
+    #what-is-digital-marketing {
+        padding: 20px 10px;
+    }
+
+    #what-is-digital-marketing h2 {
+        font-size: 1.5rem; /* Smaller font size for headings */
+    }
+
+    .what-is-content img {
+        width: 100%; /* Image takes full width */
+        border-radius: 5px; /* Smaller border radius */
+    }
+
+    .what-is-content .text {
+        width: 100%; /* Text takes full width */
+        font-size: 0.9rem; /* Smaller font size for text */
+    }
+
+    #what-is-digital-marketing p {
+        font-size: 0.9rem; /* Smaller font size for paragraphs */
+        line-height: 1.4; /* Adjust line height for better readability */
+    }
+
+    .why-digital-content {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 10px; /* Reduce gap between items */
+    }
+
+    .why-digital-content .text {
+        width: 100%; /* Text takes full width */
+        font-size: 0.9rem; /* Smaller font size for text */
+    }
+
+    .why-digital-content p {
+        font-size: 0.9rem; /* Smaller font size for paragraphs */
+        line-height: 1.4; /* Adjust line height for better readability */
+    }
+}
+
+/* Responsive Design for screens less than or equal to 200px */
+@media screen and (max-width: 200px) {
+    #what-is-digital-marketing {
+        padding: 20px 10px; /* Reduce padding for very small screens */
+    }
+
+    #what-is-digital-marketing h2 {
+        font-size: 1.5rem; /* Further reduce font size for headings */
+    }
+
+    .what-is-content, .why-digital-content {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 20px; /* Reduce gap between items */
+    }
+
+    .what-is-content img, .what-is-content .text {
+        width: 100%; /* Ensure elements take full width */
+    }
+
+    #what-is-digital-marketing p, 
+    .why-digital-content p {
+        font-size: 0.8rem; /* Smaller font size for text */
+        line-height: 1.4; /* Reduce line height */
+        text-align: justify; /* Keep text justified */
+    }
+}
+
+.footer {
+    background-color: #343a40;
+    padding: 20px 20px;
+    color: #fff;
+}
+.button{
+    background-color:  #343a40;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.logo-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.quick-links {
+    flex: 3;
+    text-align: center;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.quick-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contact-info {
+    flex: 3;
+    text-align: center;
+    font-size: 14px;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.social-media {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.social-media h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-icons li {
+    margin-left: 15px;
+}
+
+.social-icons li img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+}
+
+/*.privacy {
+    text-align: right;
+    
+}
+
+.privacy a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}*/
+
+/* Additional styles for responsiveness */
+/*@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .quick-links ul li {
+        margin: 5px 10px;
+    }
+
+    .contact-info {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .social-media {
+        margin-top: 10px;
+    }
+
+    .privacy {
+        text-align: center;
+        margin-top: 10px;
+  }
+}*/
+
